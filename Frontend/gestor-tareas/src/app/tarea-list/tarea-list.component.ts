@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Tarea} from '../models/tarea';
 import { TareasService } from '../services/tareas.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tarea-list',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './tarea-list.component.html',
   styleUrl: './tarea-list.component.css'
 })
