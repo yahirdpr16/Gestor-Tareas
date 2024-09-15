@@ -4522,11 +4522,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/yahir/Documents/WebApplication1/WebApplication1/WebApplication1.csproj",
+      "projectUniqueName": "/Users/yahir/Documents/Gestor-Tareas/Backend/WebApplication1/WebApplication1/WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "/Users/yahir/Documents/WebApplication1/WebApplication1/WebApplication1.csproj",
+      "projectPath": "/Users/yahir/Documents/Gestor-Tareas/Backend/WebApplication1/WebApplication1/WebApplication1.csproj",
       "packagesPath": "/Users/yahir/.nuget/packages/",
-      "outputPath": "/Users/yahir/Documents/WebApplication1/WebApplication1/obj/",
+      "outputPath": "/Users/yahir/Documents/Gestor-Tareas/Backend/WebApplication1/WebApplication1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/yahir/.nuget/NuGet/NuGet.Config"

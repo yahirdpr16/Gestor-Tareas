@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Lista de Tareas</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>TÍTULO</th>
+        <th>DESCRIPCIÓN</th>
+        <th>ESTADO</th>
+        <th>ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tarea of tareas">
+        <td>{{ tarea.id }}</td>
+        <td>{{ tarea.titulo }}</td>
+        <td>{{ tarea.descripcion }}</td>
+        <td>{{ tarea.estado }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="actualizarEstado(tarea)">
+            Cambiar estado
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

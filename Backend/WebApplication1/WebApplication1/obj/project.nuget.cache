@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zISVJ/lAc5U=",
+  "dgSpecHash": "HyXRx8Qr57A=",
   "success": true,
-  "projectFilePath": "/Users/yahir/Documents/WebApplication1/WebApplication1/WebApplication1.csproj",
+  "projectFilePath": "/Users/yahir/Documents/Gestor-Tareas/Backend/WebApplication1/WebApplication1/WebApplication1.csproj",
   "expectedPackageFiles": [
     "/Users/yahir/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/yahir/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
