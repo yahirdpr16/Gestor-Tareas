@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Tarea} from '../models/tarea';
-import { TareasService } from '../services/tareas.service';
+import { TareasEstadoService } from '../services/tareas-estado.service';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tarea-list',
@@ -11,33 +12,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './tarea-list.component.css'
 })
 export class TareaListComponent implements OnInit{
-tareas: Tarea[]=[];
-constructor(private tareasService:TareasService){}
+tareas$:Observable<Tarea[]>;
 
-ngOnInit(): void {
-  this.getTareas();
+constructor(private tareasEstadoService:TareasEstadoService){
+  this.tareas$ = this.tareasEstadoService.tareas$;
 }
 
-getTareas():void{
-  this.tareasService.getTareas().subscribe(
-    (data:Tarea[])=>{
-      this.tareas=data;
-    },
-    (error)=>{
-      console.error('Error al obtener tareas',error);
-    }
-  );
+ngOnInit(): void {
 }
 
 actualizarEstado(tarea: Tarea):void{
-  tarea.estado=tarea.estado==='En progreso'?'Completada':'En progreso';
-  this.tareasService.actualizarTarea(tarea.id,tarea).subscribe(
-    (tareaActualizada)=>{
-      console.log('Estado de la tarea actualizado', tareaActualizada);
-    },
-    (error)=>{
-      console.log("Error al actualizar la tarea",error);
-    }
-  );
+  tarea.estado = tarea.estado === 'En progreso' ? 'Completada' : 'En progreso';
+    this.tareasEstadoService.actualizarTarea(tarea); 
 }
 }

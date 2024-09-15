@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TareasService } from '../services/tareas.service';
+import { TareasEstadoService } from '../services/tareas-estado.service';
 import { Tarea } from '../models/tarea';
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -18,24 +19,11 @@ export class TareasFormComponent {
     descripcion: '',
     estado: 'Pendiente',
   };
-  constructor(private tareasService:TareasService){}
+  constructor(private tareasEstadoService:TareasEstadoService){}
 
   onSubmit() {
-    this.tareasService.crearTarea(this.nuevaTarea).subscribe(
-      (respuesta:Tarea) => {
-        console.log('Tarea creada:', respuesta);
-        
-        this.nuevaTarea = {
-          id: 0,
-          titulo: '',
-          descripcion: '',
-          estado: 'Pendiente'
-        };
-      },
-      (error) => {
-        console.error('Error al crear la tarea:', error);
-      }
-    );
+    this.tareasEstadoService.agregarTarea(this.nuevaTarea);
+    this.nuevaTarea = { id: 0, titulo: '', descripcion: '', estado: 'Pendiente' };
   }
   
 }
